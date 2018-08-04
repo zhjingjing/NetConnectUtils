@@ -1,7 +1,5 @@
-package com.zj.network;
+package com.zj.net;
 
-import android.content.IntentFilter;
-import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
@@ -9,21 +7,22 @@ import android.support.v4.app.FragmentActivity;
 /**
  * create by zj on 2018/8/3
  */
-public class BaseActivity extends FragmentActivity implements NetBroadcastReceiver.NetEvevt{
-    public static NetBroadcastReceiver.NetEvevt evevt;
+public class BaseActivity extends FragmentActivity implements NetBroadcastReceiver.NetEvent{
+    public static NetBroadcastReceiver.NetEvent evevt;
 
     public static int netState;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         evevt=this;
-        this.netState=NetUtils.getNetState(this);
+        this.netState= NetUtils.getNetState(this);
         isConnectNet();
 
-        NetBroadcastReceiver receiver=new NetBroadcastReceiver();
-        IntentFilter intentFilter=new IntentFilter();
-        intentFilter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
-        registerReceiver(receiver,intentFilter);
+        //动态注册
+//        NetBroadcastReceiver receiver=new NetBroadcastReceiver();
+//        IntentFilter intentFilter=new IntentFilter();
+//        intentFilter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
+//        registerReceiver(receiver,intentFilter);
 
 
     }

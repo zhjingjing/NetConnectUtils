@@ -1,10 +1,8 @@
 package com.zj.net;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import com.zj.network.BaseActivity;
 
 public class MainActivity extends BaseActivity {
 

@@ -1,4 +1,4 @@
-package com.zj.network;
+package com.zj.net;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

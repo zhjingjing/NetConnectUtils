@@ -1,15 +1,16 @@
-package com.zj.network;
+package com.zj.net;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 
+
 /**
  * create by zj on 2018/8/3
  */
 public class NetBroadcastReceiver extends BroadcastReceiver {
-    public NetEvevt evevt = BaseActivity.evevt;
+    public NetEvent evevt = BaseActivity.evevt;
 
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -20,7 +21,7 @@ public class NetBroadcastReceiver extends BroadcastReceiver {
     }
 
     // 自定义接口
-    public interface NetEvevt {
+    public interface NetEvent {
          void onNetChange(int netWorkState);
     }
 }
